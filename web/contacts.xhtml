@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+            <link rel="stylesheet" href="style.css"/>
+        <title>BYM Lojistik, Taşımacılık, Evden Eve</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="nakliye,lojistik,taşımacılık,evden eve,taşıma"/>
+        <meta name="author" content="Sami Baran KORKMAZ, Yunus Emre SAVAN, Mehmet KAAN"/>
+        <meta name="description" content="Nakliye, Taşımacılık, Evden Eve ve Lojistik İşlemleri"/>
+                       <style>
+ul {
+  list-style-type:none;
+  overflow:hidden;
+  margin-left: -120px;
+  margin-bottom: -35px;
+  padding: 50px;
+  
+}
+li {
+  float:left;
+}
+li a{
+  padding:36px;
+  margin-right:5px;
+  margin-bottom: -10px;
+  text-align: center;
+  color:white;
+  text-decoration: none;
+  }
+  
+   #bolge2 {
+      background-image: url("background-phone.jpg"); 
+      height: 1050px;
+      margin-top:5px; 
+  }
+ 
+ 
+
+        </style>
+    </h:head>
+    <h:body>
+        
+               
+     
+<div style="background-color: #0dcaf0" class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="display-1 text-center">
+                    İletişim
+                </h1>
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <h:form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           <h:outputText value="İsim"></h:outputText>
+                          <h:inputText value="#{contact.name}" title="Name" id="inputName" class="form-control required"></h:inputText>
+                        </div>
+                        <div class="form-group">
+                          <h:outputText value="E-Posta"></h:outputText>
+                          <h:inputText value="#{contact.email}" title="E-mail" id="inputEmail" class="form-control required"></h:inputText>
+                        </div>
+                        <div class="form-group">
+                         
+                         <h:outputText value="Konu"></h:outputText>
+                         <h:selectOneMenu value="#{contact.konu}" title="Birini Seçiniz" id="inputSubject" class="form-control required" >
+                         <f:selectItem itemValue="Genel Müşteri Hizmetleri" itemLabel="Genel Müşteri Hizmetleri"/>
+                         <f:selectItem itemValue="Dilek/Öneri/Şikayet" itemLabel="Dilek/Öneri/Şikayet"/>
+                         <f:selectItem itemValue="Hizmet Desteği" itemLabel="Hizmet Desteği"/>
+                         </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <h:outputText value="Mesajınız"></h:outputText>
+                          <hr/>
+                          <h:inputTextarea rows="3" cols="50" value="#{contact.mesaj}" class="required"></h:inputTextarea>
+                           <div class="text-center mt-3 mb-3" style="float:right;">
+                               <h:commandButton  class="btn btn-lg btn-warning btn-block" value="Gönder" action="#{contact.kayit()}"></h:commandButton>
+                        </div>
+                        </div>
+                    </div>
+                   
+                       
+                </div>
+                </h:form>
+            </div>
+        </div>
+        <hr/>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Ofisimiz</legend>
+            <address>
+                <strong>BYM Lojistik LTD. ŞTİ.</strong><br></br>
+                <strong>Adres: </strong>X cd. X mh. X sk. No: X/X,<br></br>
+                     semti-X ilçesi-X şehri<br></br>
+                <abbr title="Phone"><i class="fa fa-phone" aria-hidden="true"></i>
+                    <strong>Telefon:</strong></abbr>
+                + 01 234 567 89
+            </address>
+            <address>
+                <strong>BYM Lojistik Müşteri Hizmetleri</strong><br></br>
+                <a type="button" class="btn btn-dark text-white" href="mailto:#">info@bymlojistik.com</a>
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+
+            <a href="https://www.freepik.com/psd/mockup" target="_blank" class="btn btn-transparent col-1 btn-outline-light" style="text-decoration: none; float:right; margin-top: 650px; font-family: bahnschrift, sans-serif; font-size: 8px;">Copyright of the Design</a>
+       
+        <footer class="text-center text-lg-start bg-dark text-muted">
+  
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+   
+    <div class="me-5 d-none d-lg-block">
+      <span>Bizi sosyal medyada takip et:</span>
+    </div>
+    
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </div>
+    
+  </section>
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+       
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+         
+          <h4 class="text-uppercase text-center fw-bold mb-4" style="font-family:ponymaker;">
+            <i class="fas fa-gem me-3"></i>BYM
+          </h4>
+          <p>
+            BYM Lojistik, tüm Türkiye'de büyük bir özenle taşıma ve lojistik işlerinizi üstlenir. Siparişinizi verin, gerisini bize bırakın.
+          </p>
+        </div>
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Hizmetler
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Evden Eve Nakliyat</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Parça Eşya Taşıma</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Şehirlerarası Nakliyat</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ofis Taşıma</a>
+          </p>
+           <p>
+            <a href="#!" class="text-reset">Eşya Depolama</a>
+          </p>
+        </div>
+        
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+         
+          <h6 class="text-uppercase fw-bold mb-4">
+            Şehirler
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Ankara</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">İstanbul</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">İzmir</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Bursa</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Adana</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Antalya</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Konya</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Kocaeli</a>
+          </p>
+        </div>
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p><i class="fa fa-home me-3"></i>X cd. X mh. X sk. No: X/X, X semti-X ilçesi-X şehri</p>
+          <p>
+            <i class="fa fa-envelope me-3"></i>
+            info@bymlojistik.com
+          </p>
+          <p><i class="fa fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fa fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+       
+      </div>
+     
+    </div>
+  </section>
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 <strong>BYM Lojistik</strong>, Her Hakkı Saklıdır.
+  </div>
+ 
+</footer>
+    </h:body>
+</html>

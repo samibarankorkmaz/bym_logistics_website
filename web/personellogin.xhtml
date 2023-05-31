@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="tr">
+<h:head>
+<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GİRİŞ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <style>
+      body { 
+      background-image: url("palmiye.jpg");
+               
+                height: 100%;                
+                background-size: cover;
+    }
+    
+    
+    </style>
+</h:head>
+<body>
+<div class="container" style="margin:125px;">
+        <div class="row">
+            <div class="col-md-4 offset-4">
+                    <h:form class="form-signin">
+                            <div class="text-center mb-4">    
+                              <h1 class="h3 mb-3 text-light font-weight-bold">Personel/Giriş Yap</h1>
+                              <p class="text-danger font-weight-bold">Aldığın hizmetleri takip etmek ve avantajlardan yararlanmak için kaydol veya bir hesabın varsa giriş yap. <a class="text-light" id="lnkKaydol" href="signup.xhtml">Kaydol</a><br/><a class="text-light" id="lnkKaydol" href="">Ekipten  misin?</a></p>
+                            </div>
+                      
+                            <div class="form-label-group">
+                                <h:outputText value="Email"></h:outputText>
+                                <h:inputText value="#{workersLogin.email}" title="E-Mail"  id="inputemail" class="form-control required"  ></h:inputText>
+                              
+                            </div>
+                      
+                            <div class="form-label-group">
+                                <!-- <input type="password" id="inputPassword" class="form-control required" placeholder="Parola" /> -->
+                                <h:outputText value="Password"></h:outputText>
+                                <h:inputSecret value="#{workersLogin.passw}"  id="inputPassword" class="form-control required"  ></h:inputSecret>
+                             
+                            </div>
+                      
+                            <div class="checkbox mb-3">
+                              <label class="text-light">
+                                <input type="checkbox" value="remember-me"/> Beni unutma!
+                              </label>
+                            </div>
+                        <div class="text-center">
+                        
+                            <h:commandButton  class="btn btn-lg btn-warning btn-block" value="Giriş" action="#{workersLogin.login()}"></h:commandButton>
+                        </div>
+                        <p class="mt-5 mb-3 text-muted text-center">&copy; 2021 <strong>BYM Lojistik, </strong>Her Hakkı Saklıdır.</p>
+                          </h:form>
+             
+
+            </div>
+
+        </div>
+            
+
+    </div>
+               
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

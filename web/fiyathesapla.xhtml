@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+     
+    <h:head>
+<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"></link>
+ 	<link rel="stylesheet" href="style.css"/>
+
+<title>BYM Fiyat Hesapla</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        
+        <style>
+ul {
+  list-style-type:none;
+  overflow:hidden;
+  margin-left: -120px;
+  margin-bottom: -35px;
+  padding: 50px;
+  
+}
+li {
+  float:left;
+}
+li a{
+  padding:36px;
+  margin-right:5px;
+  margin-bottom: -10px;
+  text-align: center;
+  color:white;
+  text-decoration: none;
+  }
+  
+   #bolge2 {
+      background-image: url("background-phone.jpg"); 
+      height: 1050px;
+      margin-top:5px; 
+  }
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 550px;
+margin-top: auto;
+margin-bottom: auto;
+margin-left: auto;
+margin-right: auto;
+width: 500px;
+background-color: #FFFFFF !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header{
+    background-color: lightblue;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.text-center{
+    margin: auto;
+    float: left;
+    margin-left: 20px;
+}
+
+        </style>
+    </h:head>
+    <h:body>
+  <div id="main">
+            <div class="bolge" id="bolge1">
+                <header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="videom.mp4" type="video/mp4"/>
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1  style="font-family: PonyMaker; font-size: 200px;">BYM<samp style="font-family: Beardbone Personal Use; padding-left: 20px;"> Lojistik</samp></h1>
+        <p class="lead" style="font-family:pristina; letter-spacing: 8px; font-size: 30px;"><i>"Türkiye'nin <strong><em>#1</em></strong> Numaralı Lojistik Firması"</i></p>
+        <div class="row align-items-end justify-content-end ms-2">
+                  
+        </div>
+        
+      <ul>
+            <li><a href="index.xhtml" class=" btn btn-outline-light"> Ana Sayfa</a></li>
+                
+               
+                <li><a href="contacts.xhtml" class=" btn btn-outline-light">İletişim</a></li>
+                <li><a href="hakkimizda.xhtml" class=" btn btn-outline-light">Hakkımızda</a></li>
+                <li><a href="fiyathesapla.xhtml" class=" btn btn-outline-light">Fiyat Hesapla</a></li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</header>      
+            </div>
+</div>     
+        <section class="bolge shadow p-3 bg-white rounded" id="bolge2" >
+           
+            
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Fiyat Hesapla</h3>
+                        
+                    </div>
+                    <div class="card-body">
+                        <h:form>
+                            <div class="input-group form-group">
+                                <h:outputText value="Hizmet Seçiniz : "></h:outputText>
+                                <div class="input-group-prepend">
+                                   <span class="input-group-text"><i class="fa fa-home"></i></span> 
+                                </div>
+                          
+                                
+                                <h:selectOneMenu value="#{fiyatHesapla.serviceType}" title="Hizmet Seçiniz" class="form-control required">
+                                <f:selectItem itemValue="Sehirler Arasi Tasima" itemLabel="Sehirler Arasi Tasima"/>
+                                <f:selectItem itemValue="Evden Eve Nakliyat" itemLabel="Evden Eve Nakliyat"/>
+                                <f:selectItem itemValue="Parca Esya Tasima" itemLabel="Parca Esya Tasima"/>
+                                <f:selectItem itemValue="Ofis Tasima" itemLabel="Ofis Tasima"/>
+                                </h:selectOneMenu>
+                                
+                            </div>
+                            
+                            <div class ="input-group form-group">
+                                <h:outputText value="Firma Seçiniz : "></h:outputText>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                                </div>
+                            
+                                
+                                <h:selectOneMenu value="#{fiyatHesapla.company_name}" title="Firma Seçiniz :" class="form-control required">
+                                <f:selectItem itemValue="A Firmasi" itemLabel="A Firmasi"/>
+                                <f:selectItem itemValue="B Firmasi" itemLabel="B Firmasi"/>
+                                <f:selectItem itemValue="C Firmasi" itemLabel="C Firmasi"/>
+                                </h:selectOneMenu>
+                                
+                                
+                            </div>
+                                                        <div class="input-group form-group">
+                                <h:outputText value="Başlangıç Konumu : "></h:outputText>
+                                <div class="input-group-prepend">
+                                   <span class="input-group-text"><i class="fa fa-building"></i></span> 
+                                </div>
+                           
+                                
+                                <h:selectOneMenu value="#{fiyatHesapla.start}" title="Başlangıç Konumu :" class="form-control required">
+                                <f:selectItem itemValue="Ankara" itemLabel="Ankara"/>
+                                <f:selectItem itemValue="Istanbul" itemLabel="İstanbul"/>
+                                <f:selectItem itemValue="Izmir" itemLabel="İzmir"/>
+                                </h:selectOneMenu>
+                                
+                                
+                            </div>
+                                <div class="input-group form-group">
+                                <h:outputText value="Varış Konumu : "></h:outputText>
+                                <div class="input-group-prepend">
+                                   <span class="input-group-text"><i class="fa fa-building"></i></span> 
+                                </div>
+                             
+                                
+                                <h:selectOneMenu value="#{fiyatHesapla.end}" title="Varış Konumu :" class="form-control required">
+                                <f:selectItem itemValue="Ankara" itemLabel="Ankara"/>
+                                <f:selectItem itemValue="Istanbul" itemLabel="Istanbul"/>
+                                <f:selectItem itemValue="Izmir" itemLabel="Izmir"/>
+                                </h:selectOneMenu>
+                                
+                                
+                            </div>
+                       
+                            <div class="text-center">
+                                <h:commandButton  class="btn btn-lg btn-warning btn-block" value="Fiyat Hesapla" action="#{fiyatHesapla.fiyatHesaplaMethod()}"></h:commandButton>
+                        </div>
+                            <div class="text-center">
+                                <h:commandButton  class="btn btn-lg btn-warning btn-block" value="Sipariş Ver" action="#{fiyatHesapla.siparisVer()}"></h:commandButton>
+                        </div>
+                        </h:form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-result">
+                            
+                            <h:outputText value="Tahimini Ücret : #{fiyatHesapla.fiyat} TL"></h:outputText> 
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+        </section>
+        
+        <footer class="text-center text-lg-start bg-dark text-muted">
+  
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    
+    <div class="me-5 d-none d-lg-block">
+      <span>Bizi sosyal medyada takip et:</span>
+    </div>
+    
+
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </div>
+   
+  </section>
+  
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+       
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h4 class="text-uppercase text-center fw-bold mb-4" style="font-family:ponymaker;">
+            <i class="fas fa-gem me-3"></i>BYM
+          </h4>
+          <p>
+            BYM Lojistik, tüm Türkiye'de büyük bir özenle taşıma ve lojistik işlerinizi üstlenir. Siparişinizi verin, gerisini bize bırakın.
+          </p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Hizmetler
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Evden Eve Nakliyat</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Parça Eşya Taşıma</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Şehirlerarası Nakliyat</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ofis Taşıma</a>
+          </p>
+        </div>
+
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        
+          <h6 class="text-uppercase fw-bold mb-4">
+            Şehirler
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Ankara</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">İstanbul</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">İzmir</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Bursa</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Adana</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Antalya</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Konya</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Kocaeli</a>
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p><i class="fa fa-home me-3"></i>X cd. X mh. X sk. No: X/X, X semti-X ilçesi-X şehri</p>
+          <p>
+            <i class="fa fa-envelope me-3"></i>
+            info@bymlojistik.com
+          </p>
+          <p><i class="fa fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fa fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+      
+      </div>
+    
+    </div>
+  </section>
+ 
+
+ 
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 <strong>BYM Lojistik</strong>, Her Hakkı Saklıdır.
+  </div>
+
+</footer>
+        
+        
+        
+    </h:body>
+</html>
+
