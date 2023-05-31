@@ -1,0 +1,196 @@
+:root {
+  --base-color: rgba(255, 255, 255, 1);
+  --hover-color: rgba(220, 120, 150, 1);
+}
+
+.horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 150px;
+  height: 30px;
+  margin: 20px;
+  padding:20px;
+  border: 2px var(--base-color);
+  border-style: solid;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.horizontal > .text {
+  position: relative;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--hover-color) 0%, var(--hover-color) 50%, var(--base-color) 50%, var(--base-color) 100%);
+  background-repeat: repeat;
+  background-size: 200%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-position 300ms;
+}
+.horizontal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--base-color);
+  transform-origin: 100% 0;
+  transform: scale3d(0, 0, 0);
+  transition: transform 300ms;
+}
+.horizontal:hover .text {
+  background-position: 0 0;
+}
+.horizontal:hover::before {
+  transform-origin: 0 0;
+  transform: scale3d(1, 1, 1);
+}
+
+.vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 150px;
+  height: 30px;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid var(--base-color);
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.vertical > .text {
+  position: relative;
+  color: transparent;
+  background-image: linear-gradient(0deg, var(--hover-color) 0%, var(--hover-color) 50%, var(--base-color) 50%, var(--base-color) 100%);
+  background-repeat: repeat;
+  background-size: 100% 200%;
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-position 300ms;
+}
+.vertical::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--base-color);
+  transform-origin: 0 0;
+  transform: scale3d(0, 0, 0);
+  transition: transform 300ms;
+}
+.vertical:hover .text {
+  background-position: 0 100%;
+}
+.vertical:hover::before {
+  transform-origin: 0 100%;
+  transform: scale3d(1, 1, 1);
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 1;
+}
+header .container {
+  position: relative;
+  z-index: 2;
+}
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
+}
+
+/* cards */
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+
+.flip-card-front {
+  background-color: buttonhighlight;
+  color: black;
+}
+
+
+.flip-card-back {
+  background-color: coral;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
